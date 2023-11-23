@@ -133,6 +133,8 @@ body {
 
     .app-description {
         font-size: 0.85em;
+        width: 60%;
+        margin: 10px auto;
     }
 
     .cta-button {
