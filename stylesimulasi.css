@@ -108,3 +108,28 @@ form input[type="submit"]:hover {
   width: 100%;
   z-index: 1;
 }
+
+@media only screen and (max-width: 540px) {
+  h1 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    font-size: 0.85em;
+    font-weight: normal;
+    margin-top: 10px;
+  }
+
+  header li {
+    display: none;
+  }
+
+  #loadingMessage {
+    font-style: normal;
+    font-size: 0.7em;
+    background-color: lightgreen;
+    padding: 10px !important;
+    text-align: center !important;
+    width: 50% !important;
+  }
+}

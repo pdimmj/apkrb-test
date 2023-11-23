@@ -96,3 +96,17 @@ section {
   margin-top: 60px;
   text-align: center;
 }
+
+@media only screen and (max-width: 540px) {
+  .four_zero_four_bg {
+    margin-top: 60px;
+    height: 100px;
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  header li {
+    display: none;
+  }
+}
