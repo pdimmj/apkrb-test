@@ -1,0 +1,43 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 100px 0 60px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+
+header img {
+  height: 40px;
+  margin-left: 40px;
+}
+
+header {
+  background-color: #000620;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 black;
+  z-index: 99;
+}
+
+header * {
+  display: inline;
+}
+
+header li {
+  margin: 20px;
+}
+
+header li a {
+  font-family: 'Montserrat', sans-serif;
+  color: white !important;
+  text-decoration: none !important;
+}

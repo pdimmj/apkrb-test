@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Hitungan PPh Pasal 4 ayat 2 Jasa Konstruksi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/fav.png">
+    <link rel="stylesheet" href="stylesimulasi.css">
+    <script>
+
+    function submitForm() {
+      const form = document.getElementById('simulasiForm');
+      const loadingMessage = document.getElementById('loadingMessage');
+
+      if (isFormValid(form)) {
+        loadingMessage.style.display = 'block';
+        setTimeout(() => {
+          window.location.href = "halaman-baru.html";
+        }, 2000);
+      } else {
+        alert('Harap isi semua kolom form sebelum melakukan submit.');
+      }
+    }
+
+    function isFormValid(form) {
+      const formInputs = form.querySelectorAll('input, select');
+
+      for (const input of formInputs) {
+        if (input.required && !input.value.trim()) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+    </script>
+    <script src="scriptpphfinalkonstruksippn.js"></script>
+</head>
+<body>
+  
+  <header>
+    <a href="index.html"><img src="assets/logoapakarebawhite.png"></a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="kamuskepatuhan.html">Kamus Kepatuhan</a></li>
+        </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <h1>PPh Pasal 4 ayat 2 Jasa Konstruksi</h1>
+    <h4>Simulasi Perhitungan</h4>
+    <form id="simulasiForm">
+      <input type="hidden" name="formType" id="formType" value="pphfinalkonstruksi">
+
+      <label for="namasatker" required>Nama Satker</label>
+      <input type="text" id="namasatker" name="namasatker" required><br>
+
+      <hr style="margin: 25px 0;"/>
+
+      <label for="nama" required>Nama:</label>
+      <input type="text" id="nama" name="nama" required><br>
+
+      <label for="rekanan" required>Rekanan adalah PKP</label>
+      <select id="rekanan" name="rekanan" required>
+        <option value="YA">YA</option>
+        <option value="TIDAK">TIDAK</option>
+      </select><br>
+
+      <label for="bulan">Masa Pajak</label>
+      <select id="bulan" name="bulan" required>
+        <option value="Januari">Januari</option>
+        <option value="Februari">Februari</option>
+        <option value="Maret">Maret</option>
+        <option value="April">April</option>
+        <option value="Mei">Mei</option>
+        <option value="Juni">Juni</option>
+        <option value="Juli">Juli</option>
+        <option value="Agustus">Agustus</option>
+        <option value="September">September</option>
+        <option value="Oktober">Oktober</option>
+        <option value="November">November</option>
+        <option value="Desember">Desember</option>
+      </select><br>
+
+      <label for="konstruksi">Konstruksi Terintegrasi</label>
+      <select id="konstruksi" name="konstruksi" required>
+        <option value="YA">YA</option>
+        <option value="TIDAK">TIDAK</option>
+      </select><br>
+
+      <label for="sertifikasi">Sertifikasi Terintegrasi</label>
+      <select id="sertifikasi" name="sertifikasi" required>
+        <option value="YA">YA</option>
+        <option value="TIDAK">TIDAK</option>
+      </select><br>
+
+      <label for="kualifikasi">Kualifikasi Sertifikasi</label>
+      <select id="kualifikasi" name="kualifikasi" required>
+        <option value="Kecil">Kecil</option>
+        <option value="Selain Kecil">Selain Kecil</option>
+        <option value="Tidak Sertifikasi">Tidak Sertifikasi</option>
+      </select><br>
+
+      <label for="pembayaranppn">Pembayaran termasuk PPN</label>
+      <select id="pembayaranppn" name="pembayaranppn" required>
+        <option value="YA">YA</option>
+        <option value="TIDAK">TIDAK</option>
+      </select><br>
+
+      <label for="pembayaran" required>Pembayaran</label>
+      <input type="text" id="pembayaran" name="pembayaran" required><br>
+
+      <label for="dasarPengenaan">Dasar Pengenaan Pajak</label>
+      <input type="text" id="dasarPengenaan" name="dasarPengenaan" style="font-weight: bold; background-color: rgb(235, 235, 235);" readonly><br>
+
+      <label for="pphFinalTerintegrasi">PPh Pasal 4 ayat 2 (terintegrasi)</label>
+      <input type="text" id="pphFinalTerintegrasi" name="pphFinalTerintegrasi" style="font-weight: bold; background-color: rgb(235, 235, 235);" readonly><br>
+
+      <label for="pphFinalTidakTerintegrasi">PPh Pasal 4 ayat 2 (tidak terintegrasi)</label>
+      <input type="text" id="pphFinalTidakTerintegrasi" name="pphFinalTidakTerintegrasi" style="font-weight: bold; background-color: rgb(235, 235, 235);" readonly><br>
+
+      <label for="nilaiPertambahanNilai">PPN (tidak dipungut apabila bukan rekanan)</label>
+      <input type="text" id="nilaiPertambahanNilai" name="nilaiPertambahanNilai" style="font-weight: bold; background-color: rgb(235, 235, 235);" readonly><br>
+
+      <div id="loadingMessage" style="display: none; font-style: bold; background-color: lightgreen; padding: 10px 0; text-align: center; margin: 0 auto; width: 20%;">Silahkan tunggu...</div>
+      
+      <input type="submit" value="Submit" onclick="submitForm()">
+    </form>
+  </main>
+
+  <div class="footer">
+    <p>&copy; 2023 APAKAREBA v1.0 - KPP Pratama Mamuju</p>
+</div>
+
+</body>
+</html>
