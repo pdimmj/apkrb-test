@@ -235,4 +235,13 @@ header li a {
     .card p {
         font-size: 0.8em;
     }
+
+    .menu-container {
+        text-align: center;
+        margin-bottom: -5px;
+    }
+
+    h1 {
+        margin-bottom: -5px;
+    }
 }
